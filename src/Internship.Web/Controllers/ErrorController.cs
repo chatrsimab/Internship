@@ -14,6 +14,7 @@ namespace Internship.Web.Controllers
         public ErrorController(ILogger<ErrorController> logger)
         {
             _logger = logger;
+
         }
 
        
