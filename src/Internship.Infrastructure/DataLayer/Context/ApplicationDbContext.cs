@@ -20,6 +20,7 @@ using Internship.Core.Common.PersianToolkit;
 using Internship.Core.Common.GuardToolkit;
 using Internship.Infrastructure.DataLayer.Mappings;
 using Internship.Core.DomainModels.Entity.Routine2;
+using Internship.Core.DomainModels.Entity.Banks;
 
 namespace Internship.Infrastructure.DataLayer.Context
 {
@@ -55,6 +56,7 @@ namespace Internship.Infrastructure.DataLayer.Context
         public virtual DbSet<Notice2> Notice2 { get; set; }
 
         #endregion
+
 
 
 
@@ -174,7 +176,20 @@ namespace Internship.Infrastructure.DataLayer.Context
         }
 
         #endregion
-         
+
+        #region Banks
+
+        public virtual DbSet<BankEducationalGrade> BankEducationalGrade { set; get; }
+        public virtual DbSet<BankEducationalField> BankEducationalField { set; get; }
+        public virtual DbSet<BankTraineeMaster> BankTraineeMaster { set; get; }
+        public virtual DbSet<BankEducationalOrientation> BankEducationalOrientation { set; get; }
+        public virtual DbSet<BankUniversityName> BankUniversityName { set; get; }
+        public virtual DbSet<BankUniversityType> BankUniversityType { set; get; }
+
+
+
+        #endregion
+
         public virtual DbSet<Branch> Branchs { set; get; }
         public virtual DbSet<InternshipCenter> InternshipCenters { set; get; }
         public virtual DbSet<Test> Test { set; get; }

@@ -19,6 +19,100 @@ namespace Internship.Infrastructure.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Internship.Core.DomainModels.Entity.Banks.BankEducationalField", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BankEducationalGradeId");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BankEducationalGradeId");
+
+                    b.ToTable("BankEducationalField");
+                });
+
+            modelBuilder.Entity("Internship.Core.DomainModels.Entity.Banks.BankEducationalGrade", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BankEducationalGrade");
+                });
+
+            modelBuilder.Entity("Internship.Core.DomainModels.Entity.Banks.BankEducationalOrientation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BankEducationalFieldId");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BankEducationalFieldId");
+
+                    b.ToTable("BankEducationalOrientation");
+                });
+
+            modelBuilder.Entity("Internship.Core.DomainModels.Entity.Banks.BankTraineeMaster", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BankUniversityNameId");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BankUniversityNameId");
+
+                    b.ToTable("BankTraineeMaster");
+                });
+
+            modelBuilder.Entity("Internship.Core.DomainModels.Entity.Banks.BankUniversityName", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BankUniversityTypeId");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BankUniversityTypeId");
+
+                    b.ToTable("BankUniversityName");
+                });
+
+            modelBuilder.Entity("Internship.Core.DomainModels.Entity.Banks.BankUniversityType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BankUniversityType");
+                });
+
             modelBuilder.Entity("Internship.Core.DomainModels.Entity.Identity.AppDataProtectionKey", b =>
                 {
                     b.Property<int>("Id")
@@ -757,6 +851,38 @@ namespace Internship.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Test");
+                });
+
+            modelBuilder.Entity("Internship.Core.DomainModels.Entity.Banks.BankEducationalField", b =>
+                {
+                    b.HasOne("Internship.Core.DomainModels.Entity.Banks.BankEducationalGrade", "BankEducationalGrade")
+                        .WithMany()
+                        .HasForeignKey("BankEducationalGradeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Internship.Core.DomainModels.Entity.Banks.BankEducationalOrientation", b =>
+                {
+                    b.HasOne("Internship.Core.DomainModels.Entity.Banks.BankEducationalField", "BankEducationalField")
+                        .WithMany()
+                        .HasForeignKey("BankEducationalFieldId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Internship.Core.DomainModels.Entity.Banks.BankTraineeMaster", b =>
+                {
+                    b.HasOne("Internship.Core.DomainModels.Entity.Banks.BankUniversityName", "BankUniversityName")
+                        .WithMany()
+                        .HasForeignKey("BankUniversityNameId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Internship.Core.DomainModels.Entity.Banks.BankUniversityName", b =>
+                {
+                    b.HasOne("Internship.Core.DomainModels.Entity.Banks.BankUniversityType", "BankUniversityType")
+                        .WithMany()
+                        .HasForeignKey("BankUniversityTypeId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Internship.Core.DomainModels.Entity.Identity.RoleClaim", b =>

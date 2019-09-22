@@ -79,3 +79,12 @@ D:\Repose\internship13980630\Internship\src\Alamut.Service.Messaging\obj\Debug\n
 D:\Repose\internship13980630\Internship\src\Alamut.Service.Messaging\obj\Debug\netstandard1.4\Alamut.Service.Messaging.AssemblyInfo.cs
 D:\Repose\internship13980630\Internship\src\Alamut.Service.Messaging\obj\Debug\netstandard1.4\Alamut.Service.Messaging.dll
 D:\Repose\internship13980630\Internship\src\Alamut.Service.Messaging\obj\Debug\netstandard1.4\Alamut.Service.Messaging.pdb
+D:\GitHub\exir\Internship\src\Alamut.Service.Messaging\bin\Debug\netstandard1.4\Alamut.Service.Messaging.deps.json
+D:\GitHub\exir\Internship\src\Alamut.Service.Messaging\bin\Debug\netstandard1.4\Alamut.Service.Messaging.dll
+D:\GitHub\exir\Internship\src\Alamut.Service.Messaging\bin\Debug\netstandard1.4\Alamut.Service.Messaging.pdb
+D:\GitHub\exir\Internship\src\Alamut.Service.Messaging\obj\Debug\netstandard1.4\Alamut.Service.Messaging.csprojAssemblyReference.cache
+D:\GitHub\exir\Internship\src\Alamut.Service.Messaging\obj\Debug\netstandard1.4\Alamut.Service.Messaging.csproj.CoreCompileInputs.cache
+D:\GitHub\exir\Internship\src\Alamut.Service.Messaging\obj\Debug\netstandard1.4\Alamut.Service.Messaging.AssemblyInfoInputs.cache
+D:\GitHub\exir\Internship\src\Alamut.Service.Messaging\obj\Debug\netstandard1.4\Alamut.Service.Messaging.AssemblyInfo.cs
+D:\GitHub\exir\Internship\src\Alamut.Service.Messaging\obj\Debug\netstandard1.4\Alamut.Service.Messaging.dll
+D:\GitHub\exir\Internship\src\Alamut.Service.Messaging\obj\Debug\netstandard1.4\Alamut.Service.Messaging.pdb

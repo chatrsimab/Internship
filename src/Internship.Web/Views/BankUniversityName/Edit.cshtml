@@ -1,0 +1,66 @@
+﻿@using Research.City.Admin.Toolkit;
+@using Internship.Core.DomainModels.SSOT;
+@using Internship.Web.Helpers;
+@using Internship.Core.DomainModels.DTO;
+@using Alamut.Data.Paging;
+@using Internship.Core.DomainModels.ViewModel.Banks;
+@using Internship.Toolkit;
+
+
+@model Internship.Core.DomainModels.Entity.Banks.BankUniversityName
+
+@Html.Raw(Styles.MakeLayoutBlank())
+@{
+    ViewBag.Title = "نام دانشگاه";
+    Layout = "_Layout";
+}
+
+<div class="hpanel">
+    <div class="tab-content tab-content-flex">
+        <div id="tab-5" class="tab-pane active">
+            <div class="panel-body">
+                <a class="slideToggle">
+                    <div id="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+
+                <div class="panel-right">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <form class="form-horizontal" asp-controller="BankUniversityName" asp-action="Edit" method="post">
+                                <input type="hidden" name="BankUniversityTypeId" value="@Model.BankUniversityTypeId" />
+                                <input type="hidden" name="Id" value="@Model.Id" />
+                                <div class="hpanel horange margin-bottom-0">
+                                    <div class="size-15 panel-heading hbuilt main__form">ویرایش دانشگاه </div>
+                                    <div class="panel-body panel-scroll" data-equalheight="box">
+                                        <div class="form-card">
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                                <div class="form-element form-input">
+                                                    <input asp-for="@Model.Title" id="field-OldName" class="form-element-field" placeholder="عنوان " type="text">
+                                                    <div class="form-element-bar"></div>
+                                                    <label class="form-element-label" for="field-OldName">عنوان </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-12">
+                                                <input class="btn w-lg btn-success pull-right m-t-lg" type="submit" value="ویرایش اطلاعات">
+                                            </div>
+                                        </div>
+
+                                        <a style="margin:13px" asp-action="Index" asp-controller="BankUniversityName" asp-route-id="@Model.BankUniversityTypeId" class="btn w-lg btn-success pull-right ">بازگشت</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+﻿@using Research.City.Admin.Toolkit;
+@using Internship.Core.DomainModels.SSOT;
+@using Internship.Web.Helpers;
+@using Internship.Core.DomainModels.DTO;
+@using Alamut.Data.Paging;
+@using Internship.Core.DomainModels.ViewModel.Banks;
+@using Internship.Toolkit;
+
+
+@model Internship.Core.DomainModels.Entity.Banks.BankUniversityType
+
+@{
+    ViewBag.Title = "نوع دانشگاه";
+    Layout = "_Layout";
+}
+@{
+    ViewBag.BreadCrumb = new BreadCrumb
+    {
+        Links = new List<BreadCrumbLink>
+{
+    new BreadCrumbLink
+        {
+            Title = "نوع دانشگاه",
+            Link = Url.Action("Index", "BankProvince")
+        },
+
+    new BreadCrumbLink
+        {
+            Title = "ویرایش بانک استان  "
+        },
+    }
+    };
+}
+@Html.Raw(Styles.MakeLayoutBlank())
+
+<div class="hpanel">
+    <div class="tab-content tab-content-flex">
+        <div id="tab-5" class="tab-pane active">
+            <div class="panel-body">
+                <a class="slideToggle">
+                    <div id="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+
+                <div class="panel-right">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <form class="form-horizontal" asp-controller="BankUniversityType" asp-action="Edit" method="post">
+                                <input type="hidden" name="BankFeildId" value="@Model.Id" />
+                                <div class="hpanel horange margin-bottom-0">
+                                    <div class="size-15 panel-heading hbuilt main__form">ویرایش فایل </div>
+                                    <div class="panel-body panel-scroll" data-equalheight="box">
+                                        <div class="form-card">
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                                <div class="form-element form-input">
+                                                    <input asp-for="@Model.Title" id="field-OldName" class="form-element-field" placeholder="عنوان " type="text">
+                                                    <div class="form-element-bar"></div>
+                                                    <label class="form-element-label" for="field-OldName">عنوان </label>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xs-12">
+                                                <input class="btn w-lg btn-success pull-right m-t-lg" type="submit" value="ویرایش اطلاعات">
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

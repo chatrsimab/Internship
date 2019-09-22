@@ -58,3 +58,15 @@ D:\Repose\internship13980630\Internship\src\Exir.Regate\obj\Debug\netcoreapp1.1\
 D:\Repose\internship13980630\Internship\src\Exir.Regate\obj\Debug\netcoreapp1.1\Exir.Regate.csproj.CopyComplete
 D:\Repose\internship13980630\Internship\src\Exir.Regate\obj\Debug\netcoreapp1.1\Exir.Regate.dll
 D:\Repose\internship13980630\Internship\src\Exir.Regate\obj\Debug\netcoreapp1.1\Exir.Regate.pdb
+D:\GitHub\exir\Internship\src\Exir.Regate\bin\Debug\netcoreapp1.1\Exir.Regate.deps.json
+D:\GitHub\exir\Internship\src\Exir.Regate\bin\Debug\netcoreapp1.1\Exir.Regate.dll
+D:\GitHub\exir\Internship\src\Exir.Regate\bin\Debug\netcoreapp1.1\Exir.Regate.pdb
+D:\GitHub\exir\Internship\src\Exir.Regate\bin\Debug\netcoreapp1.1\Exir.Remark.dll
+D:\GitHub\exir\Internship\src\Exir.Regate\bin\Debug\netcoreapp1.1\Exir.Remark.pdb
+D:\GitHub\exir\Internship\src\Exir.Regate\obj\Debug\netcoreapp1.1\Exir.Regate.csprojAssemblyReference.cache
+D:\GitHub\exir\Internship\src\Exir.Regate\obj\Debug\netcoreapp1.1\Exir.Regate.csproj.CoreCompileInputs.cache
+D:\GitHub\exir\Internship\src\Exir.Regate\obj\Debug\netcoreapp1.1\Exir.Regate.AssemblyInfoInputs.cache
+D:\GitHub\exir\Internship\src\Exir.Regate\obj\Debug\netcoreapp1.1\Exir.Regate.AssemblyInfo.cs
+D:\GitHub\exir\Internship\src\Exir.Regate\obj\Debug\netcoreapp1.1\Exir.Regate.csproj.CopyComplete
+D:\GitHub\exir\Internship\src\Exir.Regate\obj\Debug\netcoreapp1.1\Exir.Regate.dll
+D:\GitHub\exir\Internship\src\Exir.Regate\obj\Debug\netcoreapp1.1\Exir.Regate.pdb
