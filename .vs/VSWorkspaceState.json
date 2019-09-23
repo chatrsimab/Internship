@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\Internship.Infrastructure",
+    "\\src\\Internship.Infrastructure\\Services",
+    "\\src\\Internship.Infrastructure\\Services\\Identity",
+    "\\src\\Internship.Infrastructure\\Services\\Identity\\Logger",
+    "\\src\\Internship.Web",
+    "\\src\\Internship.Web\\Views",
+    "\\src\\Internship.Web\\Views\\BankUniversityName",
+    "\\src\\Internship.Web\\Views\\BankUniversityType"
+  ],
+  "SelectedNode": "\\src\\Internship.Infrastructure\\Services\\Identity\\Logger\\DbLogger.cs",
+  "PreviewInSolutionExplorer": false
+}
