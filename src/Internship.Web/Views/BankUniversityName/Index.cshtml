@@ -7,7 +7,7 @@
 @using Internship.Toolkit;
 
 
-@model SearchCriteriaPageModel<IPaginated<Internship.Core.DomainModels.Entity.Banks.BankUniversityName>, BankUniversityNameSearchViewModel>
+@model SearchCriteriaPageModel<List<Internship.Core.DomainModels.DTO.Test.TestSummeryDTO>, BankUniversityNameSearchViewModel>
 
 @Html.Raw(Styles.MakeLayoutBlank())
 @{
@@ -78,7 +78,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach (var item in Model.PageModel.Data)
+                                            @foreach (var item in Model.PageModel)
                                             {
                                                 count++;
 

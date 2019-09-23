@@ -6,7 +6,7 @@
 @using Internship.Core.DomainModels.ViewModel.Banks;
 
 
-@model SearchCriteriaPageModel<IPaginated<Internship.Core.DomainModels.Entity.Banks.BankUniversityType>, BankUniversityTypeSearchViewModel>
+@model SearchCriteriaPageModel<List<Internship.Core.DomainModels.Entity.Banks.BankUniversityType>, BankUniversityTypeSearchViewModel>
 
 
 @{
@@ -96,7 +96,7 @@ new BreadCrumbLink
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach (var item in Model.PageModel.Data)
+                                                    @foreach (var item in Model.PageModel)
                                                     {
                                                         count++;
                                                         <tr>

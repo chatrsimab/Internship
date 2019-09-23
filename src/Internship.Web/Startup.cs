@@ -21,6 +21,8 @@ using Internship.Infrastructure.Services.Routine2;
 using Internship.Core.DomainModels.SSOT;
 using AutoMapper;
 using Internship.Infrastructure.Mapping;
+using Internship.Infrastructure.Services.Contracts.Genericservice;
+using Internship.Infrastructure.Services.GenericService;
 
 namespace Internship.Web
 {
@@ -117,6 +119,8 @@ namespace Internship.Web
 
             services.Configure<FileConfig>(options => Configuration.Bind(options));
             services.AddAutoMapper(typeof(Routine2Mapping).GetTypeInfo().Assembly);
+
+            services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
 
             services.AddSingleton<ISmsService, ResearchSmsServices>();
             // Domain Services

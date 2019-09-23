@@ -24,7 +24,7 @@ namespace Internship.Web.Controllers.Banks
         public IActionResult Index(BankUniversityTypeSearchViewModel search)
         {
             var data = _bankUniversityTypeRepository.GetAll(search);
-            var model = new SearchCriteriaPageModel<IPaginated<BankUniversityType>, BankUniversityTypeSearchViewModel>(data, search);
+            var model = new SearchCriteriaPageModel<List<BankUniversityType>, BankUniversityTypeSearchViewModel>(data, search);
             return View(model);
         }
 

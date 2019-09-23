@@ -13,6 +13,8 @@ using Internship.Core.DomainModels.ViewModel.Banks;
 using Internship.Core.DomainModels.ViewModel.Routine2;
 using Internship.Core.DomainModels.ViewModel.Test;
 using Internship.Infrastructure.DataLayer.Context;
+using Internship.Infrastructure.Services.Contracts.Genericservice;
+using Internship.Infrastructure.Services.GenericService;
 using Internship.Infrastructure.Services.Routine2;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -23,61 +25,67 @@ using System.Threading.Tasks;
 
 namespace Internship.Infrastructure.Services.Test
 {
-    public class BankUniversityNameService
+    public class BankUniversityNameService: GenericService<BankUniversityName>
     {
-        private readonly ApplicationDbContext _context;
 
-        public BankUniversityNameService(ApplicationDbContext context)
+        private readonly DataLayer.Context.IUnitOfWork _context;
+        private DbSet<BankUniversityName> table = null;
+
+        #region constructor
+        public BankUniversityNameService(DataLayer.Context.IUnitOfWork context) :base(context)
         {
             _context = context;
+            table = _context.Set<BankUniversityName>();
         }
+        #endregion
+        
 
-        public IPaginated<BankUniversityName> GetAll(BankUniversityNameSearchViewModel search, int id)
-        {
-            var model = _context.BankUniversityName
-                .Where(p => p.BankUniversityTypeId == id)
-                .WhereIf(!string.IsNullOrEmpty(search.Term), q => q.Title.Contains(search.Term))
-                .ToPaginated(new PaginatedCriteria(search.Page, search.PageSize));
+        //public List<BankUniversityName> GetAll(BankUniversityNameSearchViewModel search, int id)
+        //{
+        //    var model = _context.BankUniversityName
+        //        .Where(p => p.BankUniversityTypeId == id)
+        //        .WhereIf(!string.IsNullOrEmpty(search.Term), q => q.Title.Contains(search.Term))
+        //        .ToList();
 
-            return model;
-        }
+        //    return model;
+        //}
 
 
-        public BankUniversityName GetById(int id)
-        {
-            return _context.BankUniversityName
-                .Where(x => x.Id == id)
-                .FirstOrDefault();
-        }
+        //public BankUniversityName GetById(int id)
+        //{
+        //    return _context.BankUniversityName
+        //        .Where(x => x.Id == id)
+        //        .FirstOrDefault();
+        //}
 
-        public ServiceResult<int> Create(BankUniversityName model)
-        {
-            _context.BankUniversityName.Add(model);
-            _context.SaveChanges();
-            var result = ServiceResult<int>.Okay(model.Id);
-            return result;
-        }
+        //public ServiceResult<int> Create(BankUniversityName model)
+        //{
+        //    _context.BankUniversityName.Add(model);
+        //    _context.SaveChanges();
+        //    var result = ServiceResult<int>.Okay(model.Id);
+        //    return result;
+        //}
 
-        public ServiceResult Edit(BankUniversityName vm)
-        {
-            //var data = _context.BankUniversityName.FirstOrDefault(q => q.Id == vm.Id);
-            //Mapper.Map(vm, data);
-            _context.BankUniversityName.Update(vm);
+        //public ServiceResult Edit(BankUniversityName vm)
+        //{
+        //    //var data = _context.BankUniversityName.FirstOrDefault(q => q.Id == vm.Id);
+        //    //Mapper.Map(vm, data);
+        //    _context.BankUniversityName.Update(vm);
 
-            _context.SaveChanges();
-            return ServiceResult<int>.Okay(vm.Id, "با موفقیت ویرایش شد");
-        }
+        //    _context.SaveChanges();
+        //    return ServiceResult<int>.Okay(vm.Id, "با موفقیت ویرایش شد");
+        //}
 
-        public ServiceResult<int> DeleteById(int id)
-        {
-            var model = _context.BankUniversityName.Find(id);
+        //public ServiceResult<int> DeleteById(int id)
+        //{
+        //    var model = _context.BankUniversityName.Find(id);
 
-            _context.Remove(model);
-            _context.SaveChanges();
+        //    _context.Remove(model);
+        //    _context.SaveChanges();
 
-            var result = ServiceResult<int>.Okay(model.Id, "با موفقیت حذف شد");
-            return result;
-        }
+        //    var result = ServiceResult<int>.Okay(model.Id, "با موفقیت حذف شد");
+        //    return result;
+        //}
 
     }
 }

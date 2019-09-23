@@ -35,11 +35,11 @@ namespace Internship.Infrastructure.Services.Test
 
         }
 
-        public IPaginated<BankUniversityType> GetAll(BankUniversityTypeSearchViewModel search)
+        public List<BankUniversityType> GetAll(BankUniversityTypeSearchViewModel search)
         {
             return _context.BankUniversityType
                 .WhereIf(!string.IsNullOrEmpty(search.Term), q => q.Title.Contains(search.Term))
-                .ToPaginated(new PaginatedCriteria(search.Page, search.PageSize));
+                .ToList();
         }
 
 
